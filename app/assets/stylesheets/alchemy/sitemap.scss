@@ -196,7 +196,7 @@ $sitemap-url-xlarge-width: 350px;
 .page_status {
   display: inline-block;
 
-  .alchemy-dialog & {
+  alchemy-dialog & {
     display: block;
   }
 }
@@ -242,7 +242,7 @@ $sitemap-url-xlarge-width: 350px;
   margin-left: 2 * $default-margin;
 }
 
-.alchemy-dialog {
+alchemy-dialog {
   #sitemap-wrapper {
     min-height: 0;
   }

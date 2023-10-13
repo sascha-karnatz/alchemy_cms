@@ -73,7 +73,7 @@
   --sl-color-neutral-950: var(--color-grey-blue_dark);
 
   /* Neutral one-offs */
-  --sl-color-neutral-0: hsl(0, 0%, 100%);
+  --sl-color-neutral-0: var(--background-color_default);
   --sl-color-neutral-1000: hsl(0, 0%, 0%);
 
   /*
@@ -323,5 +323,33 @@
 
   sl-tab-panel {
     --padding: var(--spacing-4);
+  }
+
+  sl-dialog {
+    &::part(header) {
+      --sl-font-size-large: var(--dialog_header_font-size);
+      --sl-line-height-dense: var(--dialog_header_font-size);
+
+      background-color: var(--dialog_header_background-color);
+      border-top-left-radius: var(--dialog_header_border-radius);
+      border-top-right-radius: var(--dialog_header_border-radius);
+      color: var(--dialog_header_color);
+      font-weight: var(--dialog_header_font-weight);
+    }
+
+    &::part(panel) {
+      box-shadow: var(--dialog_box-shadow);
+      min-height: var(--height, 100px);
+    }
+
+    // allow position fixed/absolute in dialog body
+    &::part(body) {
+      position: relative;
+    }
+
+    &::part(close-button) {
+      --sl-color-neutral-600: var(--dialog_header_color);
+      --sl-color-primary-600: var(--dialog_header_color); // hover state
+    }
   }
 }

@@ -54,7 +54,15 @@
 }
 
 .alchemy-light {
+  --background-color_default: var(--color-grey_light);
   --outline-color: var(--color-orange_dark);
+
+  --dialog_box-shadow: 0 8px 16px rgba(35, 35, 35, 0.5);
+  --dialog_header_background-color: var(--color-blue_dark);
+  --dialog_header_border-radius: var(--border-radius_medium);
+  --dialog_header_color: white;
+  --dialog_header_font-size: var(--font-size_small);
+  --dialog_header_font-weight: 700;
 
   --tabs_indicator-color: var(--color-orange_dark);
   --tabs_track-color: var(--color-grey_medium);

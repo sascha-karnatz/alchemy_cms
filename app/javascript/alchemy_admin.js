@@ -3,6 +3,7 @@ import "@hotwired/turbo-rails"
 import Buttons from "alchemy_admin/buttons"
 import GUI from "alchemy_admin/gui"
 import { translate } from "alchemy_admin/i18n"
+import { closeCurrentDialog, openDialog } from "alchemy_admin/dialog"
 import Dirty from "alchemy_admin/dirty"
 import fileEditors from "alchemy_admin/file_editors"
 import IngredientAnchorLink from "alchemy_admin/ingredient_anchor_link"
@@ -22,6 +23,7 @@ $.fx.speeds._default = 400
 
 // Web Components
 import "alchemy_admin/components/char_counter"
+import "alchemy_admin/components/dialog"
 import "alchemy_admin/components/datepicker"
 import "alchemy_admin/components/overlay"
 import "alchemy_admin/components/page_select"
@@ -54,6 +56,8 @@ Object.assign(Alchemy, {
   SelectBox,
   Sitemap,
   Spinner,
+  openDialog,
+  closeCurrentDialog,
   PagePublicationFields
 })
 
