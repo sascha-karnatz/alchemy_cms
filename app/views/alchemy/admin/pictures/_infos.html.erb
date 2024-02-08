@@ -1,21 +1,20 @@
-<div class="resource_info">
-  <div class="picture-file-infos">
-    <div class="value">
-      <label><%= Alchemy::Picture.human_attribute_name(:image_file_name) %></label>
-      <p><%= @picture.image_file_name %></p>
-    </div>
-    <div class="value">
-      <label><%= Alchemy::Picture.human_attribute_name(:image_file_dimensions) %></label>
-      <p><%= @picture.image_file_dimensions %>px</p>
-    </div>
-    <div class="value">
-      <label><%= Alchemy::Picture.human_attribute_name(:image_file_size) %></label>
-      <p><%= number_to_human_size @picture.image_file_size %></p>
-    </div>
-  </div>
+<div class="picture-file-infos">
+  <h3>
+    <%= Alchemy.t(:information) %>
+  </h3>
+  <dl class="resource_info">
+    <dt><%= Alchemy::Picture.human_attribute_name(:image_file_name) %></dt>
+    <dd><%= @picture.image_file_name %></dd>
+
+    <dt><%= Alchemy::Picture.human_attribute_name(:image_file_dimensions) %></dt>
+    <dd><%= @picture.image_file_dimensions %>px</dd>
+
+    <dt><%= Alchemy::Picture.human_attribute_name(:image_file_size) %></dt>
+    <dd><%= number_to_human_size @picture.image_file_size %></dd>
+  </dl>
 </div>
 
-<div class="picture-usage-info resource_info">
+<div class="picture-usage-info">
   <h3>
     <%= Alchemy.t(:this_picture_is_used_on_these_pages) %>
   </h3>
@@ -33,7 +32,7 @@
                 <% picture_ingredients.group_by(&:element).each do |element, picture_ingredients| %>
                   <li class="<%= cycle('even', 'odd') %>">
                     <% page_link = link_to element.display_name_with_preview_text,
-                                   edit_admin_page_path(page, anchor: "element_#{element.id}") %>
+                      edit_admin_page_path(page, anchor: "element_#{element.id}") %>
                     <% ingredients = picture_ingredients.map { |p| Alchemy::IngredientEditor.new(p).translated_role }.to_sentence %>
                     <%= render_icon('draggable', style: nil) %>
                     <p>

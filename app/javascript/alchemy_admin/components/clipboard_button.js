@@ -4,6 +4,7 @@ class ClipboardButton extends HTMLElement {
   constructor() {
     super()
 
+    this.classList.add("icon_button")
     this.innerHTML = `
       <i class="icon ri-clipboard-line ri-fw"></i>
     `

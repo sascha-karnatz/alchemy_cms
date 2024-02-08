@@ -170,6 +170,9 @@ $image-overlay-transition-easing: ease-in;
 
 .picture-file-infos,
 .picture-usage-info {
+  --resource_info_dt-width: 80px;
+  --resource_info_dt-justifiy-self: start;
+
   padding: 2 * $default-padding 0;
 
   .message {

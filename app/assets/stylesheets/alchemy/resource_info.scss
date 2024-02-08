@@ -1,43 +1,16 @@
 .resource_info {
-  .value {
-    @include clearfix;
-    position: relative;
+  align-items: baseline;
+  display: grid;
+  gap: 3 * $default-padding;
+  grid-template-columns: minmax(var(--resource_info_dt-width, 120px), auto) 1fr;
 
-    > label {
-      @include form-label;
-    }
-
-    > p {
-      @include form-value-display;
-      @include truncate($form-right-width);
-    }
-
-    &.with-icon {
-      > p {
-        white-space: nowrap;
-        padding-right: 40px;
-      }
-    }
+  dt {
+    font-weight: 700;
+    justify-self: var(--resource_info_dt-justifiy-self, end);
   }
 
-  .icon_button--right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 2 * $default-padding;
-    top: 2 * $default-padding;
-    height: $form-field-height;
-    background-color: $medium-gray;
-    margin: -$default-margin -2 * $default-margin;
-    padding: 0 2 * $default-padding;
-    transition: background-color 0.3s;
-    @extend .right-rounded-border;
-
-    &:hover {
-      cursor: pointer;
-      background-color: darken($medium-gray, 10%);
-      text-decoration: none;
-    }
+  dd {
+    margin: 0;
+    @include truncate(100%);
   }
 }
